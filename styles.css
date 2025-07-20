@@ -55,10 +55,11 @@ body {
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 1000;
   transition: var(--transition);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
 }
 
 .navbar.scrolled {
@@ -69,33 +70,37 @@ body {
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 80px;
 }
 
 .nav-logo h2 {
   color: var(--primary-color);
   font-weight: 700;
-  font-size: 1.75rem;
-  letter-spacing: -0.025em;
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+  transition: var(--transition);
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
   transition: var(--transition);
   position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 
 .nav-link::after {
@@ -111,10 +116,16 @@ body {
 
 .nav-link:hover {
   color: var(--primary-color);
+  transform: translateY(-1px);
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.1);
 }
 
 .hamburger {
@@ -223,58 +234,120 @@ body {
   animation: fadeInRight 1s ease-out 0.3s both;
 }
 
-.floating-cards {
+.infographic-container {
   position: relative;
   height: 100%;
-}
-
-.card {
-  position: absolute;
-  background: white;
-  padding: 1.5rem;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  text-align: center;
-  transition: var(--transition);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  gap: 3rem;
 }
 
-.card i {
+.process-diagram {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.step-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  margin-bottom: 1rem;
+}
+
+.step-circle i {
   font-size: 2rem;
+  color: white;
+}
+
+.step-content h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.step-content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.step-connector {
+  position: absolute;
+  top: 40px;
+  left: 90px;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 1px;
+}
+
+.step-3 .step-connector {
+  display: none;
+}
+
+.floating-elements {
+  position: relative;
+  animation: slideInFromRight 0.8s ease-out 0.2s both;
+}
+
+.float-item {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-item i {
+  font-size: 1.2rem;
   color: var(--primary-color);
 }
 
-.card span {
-  font-weight: 600;
-  color: var(--text-primary);
-  font-size: 0.9rem;
+.item-1 {
+  top: 30px;
+  left: -60px;
+  animation-delay: 0s;
 }
 
-.card-1 {
-  top: 20%;
-  left: 10%;
-  animation: float 6s ease-in-out infinite;
+.item-2 {
+  top: 100px;
+  right: -60px;
+  animation-delay: 1.5s;
 }
 
-.card-2 {
-  top: 50%;
-  right: 20%;
-  animation: float 6s ease-in-out infinite 2s;
+.item-3 {
+  top: 40px;
+  left: -40px;
+  animation-delay: 3s;
 }
 
-.card-3 {
-  bottom: 20%;
-  left: 30%;
-  animation: float 6s ease-in-out infinite 4s;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
+.step-circle:hover {
+  transform: translateY(-5px) scale(1.05);
   box-shadow: var(--shadow-xl);
 }
 
@@ -787,6 +860,28 @@ section {
   }
 }
 
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
@@ -926,15 +1021,43 @@ section {
     flex-direction: column;
   }
 
-  .card {
-    padding: 1rem;
+  .infographic-container {
+    gap: 2rem;
   }
 
-  .card i {
+  .process-diagram {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .step-connector {
+    display: none;
+  }
+
+  .step-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-circle i {
     font-size: 1.5rem;
   }
 
-  .card span {
-    font-size: 0.8rem;
+  .step-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .step-content p {
+    font-size: 0.75rem;
+  }
+
+
+  .float-item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .float-item i {
+    font-size: 1rem;
   }
 }

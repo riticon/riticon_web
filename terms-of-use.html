@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Use - Riticon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .legal-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .legal-nav .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 60px;
+      }
+
+      .nav-logo h3 {
+        color: var(--primary-color);
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .legal-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem;
+        line-height: 1.8;
+        background: #fff;
+      }
+
+      .legal-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .legal-header::before {
+        content: "";
+        position: absolute;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        border-radius: 2px;
+      }
+
+      .legal-title {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      .legal-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+      }
+
+      .legal-date {
+        display: inline-block;
+        background: var(--bg-secondary);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .legal-content {
+        display: grid;
+        gap: 3rem;
+      }
+
+      .legal-section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .legal-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .legal-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .legal-section h2::before {
+        content: "";
+        width: 4px;
+        height: 20px;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        border-radius: 2px;
+      }
+
+      .legal-section h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 1.5rem 0 1rem;
+        padding-left: 1rem;
+        border-left: 2px solid #3b82f6;
+      }
+
+      .legal-section p {
+        margin-bottom: 1.2rem;
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .legal-section ul {
+        margin: 1rem 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .legal-section li {
+        margin-bottom: 0.8rem;
+        color: var(--text-secondary);
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .legal-section li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .legal-nav .back-link {
+        margin-bottom: 0;
+        height: fit-content;
+        align-self: center;
+      }
+
+      .back-link:hover {
+        background: #3b82f6;
+        color: white;
+        transform: translateX(-3px);
+      }
+
+      .contact-highlight {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(29, 78, 216, 0.05)
+        );
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .legal-container {
+          padding: 6rem 1.5rem 3rem;
+        }
+
+        .legal-title {
+          font-size: 2.2rem;
+        }
+
+        .legal-section {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="legal-nav">
+      <div class="container">
+        <div class="nav-logo">
+          <h3>Riticon</h3>
+        </div>
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i>
+          Back to Home
+        </a>
+      </div>
+    </nav>
+
+    <div class="legal-container">
+      <div class="legal-header">
+        <h1 class="legal-title">Terms of Use</h1>
+        <p class="legal-subtitle">Please read these terms carefully</p>
+        <span class="legal-date">Last updated: July 20, 2025</span>
+      </div>
+
+      <div class="legal-content">
+        <div class="legal-section">
+          <h2>Agreement</h2>
+          <p>
+            These Terms of Use constitute a legally binding agreement between
+            you and Riticon ("Company," "we," "us," or "our") regarding your use
+            of our website.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>About Our Service</h2>
+          <p>
+            Riticon is a technology startup based in Bangalore, India, currently
+            in development phase. We are building innovative solutions and this
+            website serves as our primary communication channel.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Website Use</h2>
+          <p>
+            You may use our website for informational purposes and to contact us
+            regarding our services. You agree not to:
+          </p>
+          <ul>
+            <li>Use our website for unlawful purposes</li>
+            <li>Attempt to gain unauthorized access to our systems</li>
+            <li>Interfere with the website's functionality</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>Contact Information</h2>
+          <p>For questions about these Terms, contact us at:</p>
+          <p>
+            Email: compnay@riticon.com<br />
+            Location: Bangalore, India
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>No Products Currently Available</h2>
+          <p>
+            We are currently in development phase. No products or services are
+            currently available for purchase or subscription.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Intellectual Property</h2>
+          <p>
+            All content on this website, including but not limited to text,
+            graphics, logos, and software, is the property of Riticon and is
+            protected by intellectual property laws.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Disclaimer</h2>
+          <p>
+            This website is provided "as is" without any warranties. Riticon is
+            not liable for any damages arising from the use of this website.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Changes to Terms</h2>
+          <p>
+            We reserve the right to modify these Terms at any time. Changes will
+            be posted on this page with an updated date.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Governing Law</h2>
+          <p>These Terms are governed by the laws of India.</p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Contact Us</h2>
+          <p>If you have questions about these Terms, please contact us:</p>
+          <div class="contact-highlight">
+            <strong>Email:</strong> compnay@riticon.com<br />
+            <strong>Location:</strong> Bangalore, India<br />
+            <strong>Response time:</strong> We aim to respond within 48 hours
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

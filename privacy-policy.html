@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Riticon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .legal-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .legal-nav .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 60px;
+      }
+
+      .nav-logo h3 {
+        color: var(--primary-color);
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .legal-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem;
+        line-height: 1.8;
+        background: #fff;
+      }
+
+      .legal-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .legal-header::before {
+        content: "";
+        position: absolute;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        border-radius: 2px;
+      }
+
+      .legal-title {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      .legal-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+      }
+
+      .legal-date {
+        display: inline-block;
+        background: var(--bg-secondary);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .legal-content {
+        display: grid;
+        gap: 3rem;
+      }
+
+      .legal-section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .legal-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .legal-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .legal-section h2::before {
+        content: "";
+        width: 4px;
+        height: 20px;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        border-radius: 2px;
+      }
+
+      .legal-section h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 1.5rem 0 1rem;
+        padding-left: 1rem;
+        border-left: 2px solid #3b82f6;
+      }
+
+      .legal-section p {
+        margin-bottom: 1.2rem;
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .legal-section ul {
+        margin: 1rem 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .legal-section li {
+        margin-bottom: 0.8rem;
+        color: var(--text-secondary);
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .legal-section li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .legal-nav .back-link {
+        margin-bottom: 0;
+        height: fit-content;
+        align-self: center;
+      }
+
+      .back-link:hover {
+        background: #3b82f6;
+        color: white;
+        transform: translateX(-3px);
+      }
+
+      .company-info {
+        background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .company-info strong {
+        font-size: 1.3rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .contact-highlight {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.05));
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #3b82f6;
+      }
+
+      @media (max-width: 768px) {
+        .legal-container {
+          padding: 6rem 1.5rem 3rem;
+        }
+
+        .legal-title {
+          font-size: 2.2rem;
+        }
+
+        .legal-section {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="legal-nav">
+      <div class="container">
+        <div class="nav-logo">
+          <h3>Riticon</h3>
+        </div>
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i>
+          Back to Home
+        </a>
+      </div>
+    </nav>
+
+    <div class="legal-container">
+      <div class="legal-header">
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-subtitle">Your privacy matters to us</p>
+        <span class="legal-date">Last updated: July 20, 2025</span>
+      </div>
+
+      <div class="legal-content">
+        <div class="legal-section">
+          <h2>Introduction</h2>
+          <p>
+            Riticon ("we," "us," or "our") respects your privacy. This Privacy
+            Policy explains how we collect, use, and protect your information
+            when you visit our website or contact us.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Information We Collect</h2>
+
+          <h3>Information You Provide</h3>
+          <ul>
+            <li>Name and email address when you contact us</li>
+            <li>Messages you send through our contact form</li>
+            <li>Any information you voluntarily provide in communications</li>
+          </ul>
+
+          <h3>Automatically Collected Information</h3>
+          <ul>
+            <li>IP address and browser information</li>
+            <li>Pages visited on our website</li>
+            <li>Time and date of your visit</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>How We Use Your Information</h2>
+          <p>We use your information to:</p>
+          <ul>
+            <li>Respond to your inquiries and communications</li>
+            <li>Improve our website and services</li>
+            <li>Comply with legal obligations</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>Information Sharing</h2>
+          <p>
+            We do not sell, trade, or rent your personal information to third
+            parties. We may share information only:
+          </p>
+          <ul>
+            <li>With your explicit consent</li>
+            <li>To comply with legal requirements</li>
+            <li>To protect our rights and safety</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>Data Security</h2>
+          <p>
+            We implement appropriate security measures to protect your personal
+            information against unauthorized access, alteration, disclosure, or
+            destruction.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Your Rights</h2>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Access your personal information</li>
+            <li>Correct inaccurate information</li>
+            <li>Request deletion of your information</li>
+            <li>Object to processing of your information</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>Contact Form Data</h2>
+          <p>
+            Information submitted through our contact form is used solely to
+            respond to your inquiry and is not shared with third parties.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Cookies</h2>
+          <p>
+            Our website may use basic cookies for functionality. We do not use
+            tracking or advertising cookies.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>International Data Transfers</h2>
+          <p>
+            As we are based in India, your information is processed in India in
+            accordance with applicable data protection laws.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Children's Privacy</h2>
+          <p>
+            Our website is not intended for children under 13. We do not
+            knowingly collect information from children under 13.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. Changes will be
+            posted on this page with an updated date.
+          </p>
+        </div>
+
+        <div class="legal-section">
+          <h2>Contact Us</h2>
+          <p>
+            For questions about this Privacy Policy or to exercise your rights,
+            contact us at:
+          </p>
+          <div class="contact-highlight">
+            <strong>Email:</strong> compnay@riticon.com<br />
+            <strong>Response time:</strong> We aim to respond within 48 hours
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
